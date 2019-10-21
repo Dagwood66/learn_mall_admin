@@ -28,10 +28,12 @@
         },
         methods: {
             onSubmit() {
-                axios.post("/api/login", {
+                this.$store.dispatch("postLogin", {
                     ...this.form
                 }).then(res => {
-                    this.$router.push("/");
+                    if (res.data.status === "1") {
+                        this.$router.push("/");
+                    }
                 })
             }
         }
