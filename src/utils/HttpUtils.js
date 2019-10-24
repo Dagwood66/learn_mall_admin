@@ -21,3 +21,7 @@ axiosInstance.interceptors.response.use(response => {
 export function postLogin(data) {
     return axiosInstance.post("/api/login", data)
 }
+
+export function getUserList(data) {
+    return axiosInstance.get("/api/userList", data)
+}

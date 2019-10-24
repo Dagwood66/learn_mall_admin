@@ -13,6 +13,9 @@ export default new Router({
             children: [{
                 path: '/',
                 component: () => import('./views/Home.vue')
+            }, {
+                path: '/userList',
+                component: () => import('./views/user/UserList.vue')
             }]
         },
         {
