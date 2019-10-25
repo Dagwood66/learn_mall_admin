@@ -35,3 +35,15 @@ export function getGoodsList(data) {
 export function getRoleList(data) {
     return axiosInstance.get("/api/roleList", data)
 }
+
+export function getPermissionList(data) {
+    return axiosInstance.get("/api/permissionList", data)
+}
+
+export function getRolePermissionList(data) {
+    return axiosInstance.get("/api/rolePermissionList", data)
+}
+
+export function getUserRoleList(data) {
+    return axiosInstance.get("/api/userRole", data)
+}

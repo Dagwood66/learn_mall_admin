@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import {getGoodsList} from "../../utils/HttpUtils"
+    import {getPermissionList} from "../../utils/HttpUtils"
 
     export default {
         data() {
@@ -26,7 +26,7 @@
         },
         methods: {
             getDataList() {
-                getGoodsList({
+                getPermissionList({
                     params: {
                         page: this.page,
                         pageSize: this.pageSize,
