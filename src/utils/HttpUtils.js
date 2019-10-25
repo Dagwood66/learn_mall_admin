@@ -2,6 +2,8 @@ import axios from "axios"
 
 let axiosInstance = axios.create({});
 
+axiosInstance.defaults.timeout = 3000;
+
 axiosInstance.interceptors.request.use(config => {
     return config;
 }, err => {
@@ -24,4 +26,12 @@ export function postLogin(data) {
 
 export function getUserList(data) {
     return axiosInstance.get("/api/userList", data)
+}
+
+export function getGoodsList(data) {
+    return axiosInstance.get("/api/goodsList", data)
+}
+
+export function getRoleList(data) {
+    return axiosInstance.get("/api/roleList", data)
 }
