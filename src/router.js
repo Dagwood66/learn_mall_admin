@@ -31,12 +31,6 @@ export default new Router({
             }, {// 权限列表
                 path: '/permissionList',
                 component: () => import('./views/permissionGroup/PermissionList.vue')
-            }, {// 角色权限列表
-                path: '/rolePermissionList',
-                component: () => import('./views/permissionGroup/RolePermissionList.vue')
-            }, {// 用户角色列表
-                path: '/userRoleList',
-                component: () => import('./views/permissionGroup/UserRoleList.vue')
             }]
         },
         {
