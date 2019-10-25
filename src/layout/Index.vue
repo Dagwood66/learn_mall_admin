@@ -31,14 +31,6 @@
                         <i class="el-icon-setting"></i>
                         <span slot="title">权限列表</span>
                     </el-menu-item>
-                    <el-menu-item index="4-3" @click="$router.push('/rolePermissionList')">
-                        <i class="el-icon-setting"></i>
-                        <span slot="title">角色权限列表</span>
-                    </el-menu-item>
-                    <el-menu-item index="4-4" @click="$router.push('/userRoleList')">
-                        <i class="el-icon-setting"></i>
-                        <span slot="title">用户角色列表</span>
-                    </el-menu-item>
                 </el-submenu>
             </el-menu>
         </el-aside>
