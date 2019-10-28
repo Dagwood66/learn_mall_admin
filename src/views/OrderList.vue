@@ -46,10 +46,8 @@
                     page: this.page,
                     pageSize: this.pageSize,
                 }).then(res => {
-                    if (res.data.status === "1") {
-                        this.dataList = res.data.data.list;
-                        this.total = res.data.data.total;
-                    }
+                    this.dataList = res.data.data.list;
+                    this.total = res.data.data.total;
                 })
             },
             handleCurrentChange(page) {

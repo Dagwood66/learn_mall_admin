@@ -78,8 +78,10 @@ export function putPermission(id, data) {
     return axiosInstance.put("/api/permission/" + id, data);
 }
 
-export function getOrderList() {
-    return axiosInstance.get("/api/orderList");
+export function getOrderList(data) {
+    return axiosInstance.get("/api/orderList", {
+        params: data
+    });
 }
 
 export function getRolePermissionById(id, data) {
