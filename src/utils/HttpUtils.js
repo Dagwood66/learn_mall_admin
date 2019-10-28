@@ -1,4 +1,5 @@
 import axios from "axios"
+import da from "element-ui/src/locale/lang/da";
 
 let axiosInstance = axios.create({});
 
@@ -13,6 +14,7 @@ axiosInstance.interceptors.request.use(config => {
 axiosInstance.interceptors.response.use(response => {
     if (response.data.status !== "1") {
         window.vm.$message.error(response.data.msg);
+        return Promise.reject(response);
     }
     return response;
 }, err => {
@@ -37,13 +39,25 @@ export function getRoleList(data) {
 }
 
 export function getPermissionList(data) {
-    return axiosInstance.get("/api/permissionList", data)
+    return axiosInstance.get("/api/permissionList", {
+        params: data
+    })
 }
 
-export function getRolePermissionList(data) {
-    return axiosInstance.get("/api/rolePermissionList", data)
+export function getPermissionById(id, data) {
+    return axiosInstance.get("/api/permission/" + id, {
+        params: data
+    })
 }
 
-export function getUserRoleList(data) {
-    return axiosInstance.get("/api/userRole", data)
+export function deletePermissionById(id, data) {
+    return axiosInstance.delete("/api/permission/" + id, data);
+}
+
+export function postPermission(data) {
+    return axiosInstance.post("/api/permissionAdd", data);
+}
+
+export function putPermission(id, data) {
+    return axiosInstance.put("/api/permission/" + id, data);
 }

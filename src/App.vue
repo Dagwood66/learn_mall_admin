@@ -5,5 +5,5 @@
 </template>
 
 <style lang="less">
-
+    @import "./style/element-ui.less";
 </style>
