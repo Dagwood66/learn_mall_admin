@@ -58,11 +58,11 @@
                 this.getDataList();
             },
             addItem() {
-                this.$router.push({"path": "/permissionAdd"})
+                this.$router.push({"path": "/permissionGroup/permissionAdd"})
             },
             editItem(item) {
                 this.$router.push({
-                    path: "/permissionUpdate",
+                    path: "/permissionGroup/permissionUpdate",
                     query: {
                         id: item.id
                     }

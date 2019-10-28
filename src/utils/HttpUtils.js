@@ -50,6 +50,22 @@ export function getPermissionById(id, data) {
     })
 }
 
+export function getRoleById(id) {
+    return axiosInstance.get("/api/role/" + id);
+}
+
+export function putRoleById(id, data) {
+    return axiosInstance.put("/api/role/" + id, data);
+}
+
+export function deleteRoleById(id) {
+    return axiosInstance.delete("/api/role/" + id)
+}
+
+export function postRole(data) {
+    return axiosInstance.post("/api/roleAdd", data);
+}
+
 export function deletePermissionById(id, data) {
     return axiosInstance.delete("/api/permission/" + id, data);
 }
@@ -64,4 +80,14 @@ export function putPermission(id, data) {
 
 export function getOrderList() {
     return axiosInstance.get("/api/orderList");
+}
+
+export function getRolePermissionById(id, data) {
+    return axiosInstance.get("/api/rolePermission/" + id, {
+        params: data
+    })
+}
+
+export function putRolePermissionById(id, data) {
+    return axiosInstance.put("/api/rolePermission/" + id, data);
 }

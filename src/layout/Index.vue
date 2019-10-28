@@ -23,11 +23,11 @@
                         <i class="el-icon-setting"></i>
                         <span>权限管理</span>
                     </template>
-                    <el-menu-item index="4-1" @click="$router.push('/roleList')">
+                    <el-menu-item index="4-1" @click="$router.push('/permissionGroup/roleList')">
                         <i class="el-icon-setting"></i>
                         <span slot="title">角色列表</span>
                     </el-menu-item>
-                    <el-menu-item index="4-2" @click="$router.push('/permissionList')">
+                    <el-menu-item index="4-2" @click="$router.push('/permissionGroup/permissionList')">
                         <i class="el-icon-setting"></i>
                         <span slot="title">权限列表</span>
                     </el-menu-item>

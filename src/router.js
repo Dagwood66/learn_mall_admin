@@ -37,27 +37,48 @@ export default new Router({
             component: Layout,
             children: [
                 {// 角色列表
-                    path: '/roleList',
+                    path: 'roleList',
                     component: () => import('./views/permissionGroup/RoleList.vue')
                 },
                 {// 权限列表
-                    path: '/permissionList',
+                    path: 'permissionList',
                     component: () => import('./views/permissionGroup/PermissionList.vue')
                 },
                 {// 权限添加
-                    path: '/permissionAdd',
+                    path: 'permissionAdd',
                     component: () => import('./views/permissionGroup/Permission.vue'),
                     meta: {
                         title: "权限添加"
                     }
                 },
                 {// 权限编辑
-                    path: '/permissionUpdate',
+                    path: 'permissionUpdate',
                     component: () => import('./views/permissionGroup/Permission.vue'),
                     meta: {
                         title: "权限编辑"
                     }
-                }
+                },
+                {// 角色权限编辑
+                    path: 'rolePermission',
+                    component: () => import('./views/permissionGroup/RolePermission.vue'),
+                    meta: {
+                        title: "角色权限编辑"
+                    }
+                },
+                {// 角色添加
+                    path: 'roleAdd',
+                    component: () => import('./views/permissionGroup/Role.vue'),
+                    meta: {
+                        title: "角色添加"
+                    }
+                },
+                {// 角色编辑
+                    path: 'roleUpdate',
+                    component: () => import('./views/permissionGroup/Role.vue'),
+                    meta: {
+                        title: "角色编辑"
+                    }
+                },
             ]
         },
         {
