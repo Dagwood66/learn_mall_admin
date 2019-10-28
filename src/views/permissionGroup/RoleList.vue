@@ -3,10 +3,10 @@
         <el-table :data="dataList" :stripe="true" :border="true">
             <el-table-column prop="name" label="名称" width="150"></el-table-column>
             <el-table-column prop="memo" label="备注"></el-table-column>
-            <el-table-column label="操作">
+            <el-table-column label="操作" width="150">
                 <template slot-scope="scope">
-                    <el-button @click="editItem(scope.row)">编辑</el-button>
-                    <el-button @click="deleteItem(scope.row)">删除</el-button>
+                    <el-button size="mini" @click="editItem(scope.row)">编辑</el-button>
+                    <el-button size="mini" @click="deleteItem(scope.row)">删除</el-button>
                 </template>
             </el-table-column>
         </el-table>

@@ -26,6 +26,9 @@ export default new Router({
             }, {
                 path: '/goodsList',
                 component: () => import('./views/GoodsList.vue')
+            }, {
+                path: '/orderList',
+                component: () => import('./views/OrderList.vue')
             }]
         },
         {

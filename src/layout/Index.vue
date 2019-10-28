@@ -2,7 +2,7 @@
     <el-container>
         <el-aside>
             <el-menu
-                style="height: 100vh;"
+                style="height: 100vh;overflow: hidden;"
                 background-color="#545c64"
                 text-color="#fff"
                 active-text-color="#ffd04b">
@@ -14,7 +14,7 @@
                     <i class="el-icon-setting"></i>
                     <span slot="title">商品列表</span>
                 </el-menu-item>
-                <el-menu-item index="3">
+                <el-menu-item index="3" @click="$router.push('/orderList')">
                     <i class="el-icon-setting"></i>
                     <span slot="title">订单列表</span>
                 </el-menu-item>

@@ -61,3 +61,7 @@ export function postPermission(data) {
 export function putPermission(id, data) {
     return axiosInstance.put("/api/permission/" + id, data);
 }
+
+export function getOrderList() {
+    return axiosInstance.get("/api/orderList");
+}

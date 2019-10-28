@@ -2,16 +2,15 @@
     <div>
         <el-row :gutter="20">
             <el-col>
-                <el-button @click="addItem">添加</el-button>
+                <el-button size="small" @click="addItem">添加</el-button>
             </el-col>
         </el-row>
         <el-row>
             <el-col>
                 <el-table :data="dataList" :stripe="true" :border="true">
-                    <el-table-column prop="name" label="名称" width="100"></el-table-column>
-                    <el-table-column prop="type" label="类型" width="120"></el-table-column>
-                    <el-table-column prop="url" label="接口网址" width="120"></el-table-column>
-                    <el-table-column prop="memo" label="备注"></el-table-column>
+                    <el-table-column prop="goods_id" label="商品Id" width="100"></el-table-column>
+                    <el-table-column prop="goods_price" label="商品价格" width="120"></el-table-column>
+                    <el-table-column prop="user_id" label="用户Id"></el-table-column>
                     <el-table-column label="操作" width="150">
                         <template slot-scope="scope">
                             <el-button size="mini" @click="editItem(scope.row)">编辑</el-button>
@@ -27,7 +26,7 @@
 </template>
 
 <script>
-    import {getPermissionList, deletePermissionById} from "../../utils/HttpUtils"
+    import {getOrderList, deletePermissionById} from "../utils/HttpUtils"
 
     export default {
         data() {
@@ -43,7 +42,7 @@
         },
         methods: {
             getDataList() {
-                getPermissionList({
+                getOrderList({
                     page: this.page,
                     pageSize: this.pageSize,
                 }).then(res => {
