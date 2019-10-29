@@ -31,7 +31,14 @@
                 this.$store.dispatch("postLogin", {
                     ...this.form
                 }).then(res => {
-                    if (res.data.status === "1") {
+                    if (this.$route.query.redirect) {
+                        this.$router.push({
+                            path: this.$route.query.redirect,
+                            query: {
+                                ...this.$route.query
+                            }
+                        });
+                    } else {
                         this.$router.push("/");
                     }
                 })

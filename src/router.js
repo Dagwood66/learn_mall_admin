@@ -11,7 +11,7 @@ Vue.use(Router);
  * Meta说明
  *      title 路由名称(暂用于添加/修改界面标题显示)
  * */
-export default new Router({
+let router = new Router({
     routes: [
         {
             path: '/',
@@ -91,4 +91,10 @@ export default new Router({
             component: () => import("./views/Page404.vue")
         }
     ]
-})
+});
+
+router.beforeEach((to, from, next) => {
+    next();
+});
+
+export default router

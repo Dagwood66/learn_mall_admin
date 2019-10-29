@@ -6,6 +6,10 @@
                 background-color="#545c64"
                 text-color="#fff"
                 active-text-color="#ffd04b">
+                <el-menu-item index="0" @click="$router.push('/')">
+                    <i class="el-icon-setting"></i>
+                    <span slot="title">统计汇总</span>
+                </el-menu-item>
                 <el-menu-item index="1" @click="$router.push('/userList')">
                     <i class="el-icon-setting"></i>
                     <span slot="title">用户列表</span>

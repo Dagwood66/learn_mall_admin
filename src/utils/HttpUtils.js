@@ -1,5 +1,4 @@
 import axios from "axios"
-import da from "element-ui/src/locale/lang/da";
 
 let axiosInstance = axios.create({});
 
@@ -18,7 +17,17 @@ axiosInstance.interceptors.response.use(response => {
     }
     return response;
 }, err => {
-    window.vm.$message.error(err.message);
+    window.vm.$message.error(`${err.response.status} ： ${err.response.data.msg || err.message}`);
+    if (err.response.status === 401) {
+        let vm = window.vm;
+        vm.$router.push({
+            path: "/login",
+            query: {
+                ...vm.$route.query,
+                redirect: vm.$route.path
+            },
+        })
+    }
     return Promise.reject(err);
 });
 
