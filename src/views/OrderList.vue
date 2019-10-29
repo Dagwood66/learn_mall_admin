@@ -9,8 +9,10 @@
             <el-col>
                 <el-table :data="dataList" :stripe="true" :border="true">
                     <el-table-column prop="goods_id" label="商品Id" width="100"></el-table-column>
+                    <el-table-column prop="name" label="商品名称" width="100"></el-table-column>
                     <el-table-column prop="goods_price" label="商品价格" width="120"></el-table-column>
-                    <el-table-column prop="user_id" label="用户Id"></el-table-column>
+                    <el-table-column prop="user_id" label="用户Id" width="80"></el-table-column>
+                    <el-table-column prop="nickname" label="用户"></el-table-column>
                     <el-table-column label="操作" width="150">
                         <template slot-scope="scope">
                             <el-button size="mini" @click="editItem(scope.row)">编辑</el-button>
