@@ -1,16 +1,15 @@
 <template>
-    <div>
-        <el-form :model="form">
-            <el-form-item label="手机号">
+    <div class="login-module">
+        <h1>后台管理系统</h1>
+        <el-form :model="form" label-width="80px">
+            <el-form-item label="手机号:">
                 <el-input v-model="form.phone"></el-input>
             </el-form-item>
-            <el-form-item label="密码">
+            <el-form-item label="密码:">
                 <el-input type="password" v-model="form.pwd"></el-input>
             </el-form-item>
-            <el-form-item>
-                <el-button type="primary" @click="onSubmit">登录</el-button>
-            </el-form-item>
         </el-form>
+        <el-button type="primary" @click="onSubmit">登录</el-button>
     </div>
 </template>
 
@@ -46,3 +45,13 @@
         }
     }
 </script>
+
+<style scoped lang="less">
+    .login-module {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
