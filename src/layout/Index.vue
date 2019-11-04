@@ -58,6 +58,7 @@
 
 <script>
     import {mapState} from "vuex"
+    import {getLoginOut} from "../utils/HttpUtils";
 
     export default {
         computed: {
@@ -72,7 +73,9 @@
         },
         methods: {
             loginOut() {
-                this.$router.push("/login");
+                getLoginOut().then(res => {
+                    this.$router.push("/login");
+                })
             }
         }
     }

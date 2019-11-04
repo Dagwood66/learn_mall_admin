@@ -35,6 +35,10 @@ export function postLogin(data) {
     return axiosInstance.post("/api/login", data)
 }
 
+export function getLoginOut(data) {
+    return axiosInstance.get("/api/loginOut", data)
+}
+
 export function getUserList(data) {
     return axiosInstance.get("/api/userList", data)
 }
