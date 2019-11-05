@@ -17,8 +17,9 @@ axiosInstance.interceptors.response.use(response => {
     }
     return response;
 }, err => {
-    window.vm.$message.error(`${err.response.status} ： ${err.response.data.msg || err.message}`);
-    if (err.response.status === 401) {
+    if (err.code === "ECONNABORTED") {
+        window.vm.$message.error(`${err.message}`);
+    } else if (err.response.status === 401) {
         let vm = window.vm;
         vm.$router.push({
             path: "/login",
@@ -27,6 +28,8 @@ axiosInstance.interceptors.response.use(response => {
                 redirect: vm.$route.path
             },
         })
+    } else {
+        window.vm.$message.error(`${err.response.status} ： ${err.response.data.msg || err.message}`);
     }
     return Promise.reject(err);
 });
