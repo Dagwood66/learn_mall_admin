@@ -79,6 +79,27 @@ let router = new Router({
                         title: "角色编辑"
                     }
                 },
+                {// 页面列表
+                    path: 'pageList',
+                    component: () => import('./views/permissionGroup/PageList.vue'),
+                    meta: {
+                        title: "页面列表"
+                    }
+                },
+                {// 页面列表
+                    path: 'pageAdd',
+                    component: () => import('./views/permissionGroup/Page.vue'),
+                    meta: {
+                        title: "页面添加"
+                    }
+                },
+                {// 页面列表
+                    path: 'pageUpdate',
+                    component: () => import('./views/permissionGroup/Page.vue'),
+                    meta: {
+                        title: "页面修改"
+                    }
+                },
             ]
         },
         {

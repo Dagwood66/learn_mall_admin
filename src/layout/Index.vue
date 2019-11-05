@@ -35,6 +35,10 @@
                         <i class="el-icon-setting"></i>
                         <span slot="title">权限列表</span>
                     </el-menu-item>
+                    <el-menu-item index="4-3" @click="$router.push('/permissionGroup/pageList')">
+                        <i class="el-icon-setting"></i>
+                        <span slot="title">页面管理</span>
+                    </el-menu-item>
                 </el-submenu>
             </el-menu>
         </el-aside>

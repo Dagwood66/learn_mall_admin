@@ -97,6 +97,12 @@ export function getOrderList(data) {
     });
 }
 
+export function getPermissionPageList(data) {
+    return axiosInstance.get("/api/permissionPageList", {
+        params: data
+    });
+}
+
 export function getRolePermissionById(id, data) {
     return axiosInstance.get("/api/rolePermission/" + id, {
         params: data
