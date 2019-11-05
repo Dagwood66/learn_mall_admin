@@ -4,7 +4,6 @@ import {postLogin} from './utils/HttpUtils'
 
 Vue.use(Vuex);
 
-
 function getUser() {
     let userStr = window.sessionStorage.getItem("user");
     if (userStr == null || userStr === "") {
@@ -19,7 +18,8 @@ function setUser(data) {
 
 export default new Vuex.Store({
     state: {
-        user: getUser()
+        user: getUser(),
+        roles: []
     },
     mutations: {},
     actions: {
