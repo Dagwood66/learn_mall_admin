@@ -10,10 +10,12 @@
                 <el-table :data="dataList" :stripe="true" :border="true">
                     <el-table-column prop="name" label="名称" width="150"></el-table-column>
                     <el-table-column prop="memo" label="备注"></el-table-column>
-                    <el-table-column label="操作" width="250">
+                    <el-table-column label="操作" width="430">
                         <template slot-scope="scope">
-                            <el-button size="mini" @click="editItem(scope.row)">编辑</el-button>
+                            <el-button size="mini" @click="editPage(scope.row)">用户管理</el-button>
+                            <el-button size="mini" @click="editPage(scope.row)">页面管理</el-button>
                             <el-button size="mini" @click="editPermission(scope.row)">权限管理</el-button>
+                            <el-button size="mini" @click="editItem(scope.row)">编辑</el-button>
                             <el-button size="mini" @click="deleteItem(scope.row)">删除</el-button>
                         </template>
                     </el-table-column>
@@ -88,6 +90,14 @@
             editPermission(item) {
                 this.$router.push({
                     path: "/permissionGroup/rolePermission",
+                    query: {
+                        id: item.id
+                    }
+                })
+            },
+            editPage(item) {
+                this.$router.push({
+                    path: "/permissionGroup/rolePage",
                     query: {
                         id: item.id
                     }

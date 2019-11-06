@@ -23,6 +23,32 @@ const baseRoutesLocal = [
         }]
     },
     {
+        path: '/login',
+        name: 'login',
+        component: () => import('./views/Login.vue')
+    },
+    // {
+    //     path: "/*",
+    //     component: () => import("./views/Page404.vue")
+    // }
+];
+
+const asyncRoutesLocal = [
+    {
+        path: '/',
+        component: Layout,
+        children: [{
+            path: '/userList',
+            component: () => import('./views/user/UserList.vue')
+        }, {
+            path: '/goodsList',
+            component: () => import('./views/GoodsList.vue')
+        }, {
+            path: '/orderList',
+            component: () => import('./views/OrderList.vue')
+        }]
+    },
+    {
         path: '/permissionGroup',
         component: Layout,
         children: [
@@ -83,40 +109,23 @@ const baseRoutesLocal = [
                     title: "页面添加"
                 }
             },
-            {// 页面列表
+            {// 页面修改
                 path: 'pageUpdate',
                 component: () => import('./views/permissionGroup/Page.vue'),
                 meta: {
                     title: "页面修改"
                 }
             },
+            {// 页面修改
+                path: 'rolePage',
+                component: () => import('./views/permissionGroup/RolePage.vue'),
+                meta: {
+                    title: "角色页面管理"
+                }
+            },
         ]
     },
-    {
-        path: '/login',
-        name: 'login',
-        component: () => import('./views/Login.vue')
-    },
-    // {
-    //     path: "/*",
-    //     component: () => import("./views/Page404.vue")
-    // }
 ];
-
-const asyncRoutesLocal = [{
-    path: '/',
-    component: Layout,
-    children: [{
-        path: '/userList',
-        component: () => import('./views/user/UserList.vue')
-    }, {
-        path: '/goodsList',
-        component: () => import('./views/GoodsList.vue')
-    }, {
-        path: '/orderList',
-        component: () => import('./views/OrderList.vue')
-    }]
-},];
 
 let router = new Router({
     routes: [

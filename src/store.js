@@ -19,7 +19,7 @@ function setUser(data) {
 export default new Vuex.Store({
     state: {
         user: getUser(),
-        roles: []
+        roles: [] // 异步权限
     },
     mutations: {},
     actions: {
