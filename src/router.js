@@ -44,6 +44,18 @@ const asyncRoutesLocal = [
             path: '/goodsList',
             component: () => import('./views/GoodsList.vue')
         }, {
+            path: 'goodsAdd',
+            component: () => import('./views/Goods.vue'),
+            meta: {
+                title: "商品添加"
+            }
+        }, {
+            path: 'goodsUpdate',
+            component: () => import('./views/Goods.vue'),
+            meta: {
+                title: "商品编辑"
+            }
+        }, {
             path: '/orderList',
             component: () => import('./views/OrderList.vue')
         }]

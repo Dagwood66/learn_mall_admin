@@ -74,12 +74,20 @@ export function putRoleById(id, data) {
     return axiosInstance.put("/api/role/" + id, data);
 }
 
+export function putGoodsById(id, data) {
+    return axiosInstance.put("/api/goods/" + id, data);
+}
+
 export function deleteRoleById(id) {
     return axiosInstance.delete("/api/role/" + id)
 }
 
 export function postRole(data) {
     return axiosInstance.post("/api/roleAdd", data);
+}
+
+export function deleteGoodsById(id, data) {
+    return axiosInstance.delete("/api/goods/" + id, data);
 }
 
 export function deletePermissionById(id, data) {
@@ -114,4 +122,12 @@ export function getRolePermissionById(id, data) {
 
 export function putRolePermissionById(id, data) {
     return axiosInstance.put("/api/rolePermission/" + id, data);
+}
+
+export function postGoods(data) {
+    return axiosInstance.post("/api/goodsAdd", data);
+}
+
+export function getGoodsById(id) {
+    return axiosInstance.get("/api/goods/" + id);
 }
