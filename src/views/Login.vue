@@ -31,7 +31,8 @@
                     ...this.form
                 }).then(res => {
                     if (this.$route.query.redirect) {
-                        this.$router.push({
+                        // 防止$route.go(-1)回到登陆
+                        this.$router.replace({
                             path: this.$route.query.redirect,
                             query: {
                                 ...this.$route.query

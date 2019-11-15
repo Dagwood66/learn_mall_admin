@@ -21,7 +21,8 @@ axiosInstance.interceptors.response.use(response => {
         window.vm.$message.error(`${err.message}`);
     } else if (err.response.status === 401) {
         let vm = window.vm;
-        vm.$router.push({
+        // 防止$route.go(-1)回到登陆
+        vm.$router.replace({
             path: "/login",
             query: {
                 ...vm.$route.query,
