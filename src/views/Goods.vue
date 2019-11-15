@@ -7,6 +7,11 @@
                     <el-input v-model="form.name"></el-input>
                 </el-col>
             </el-form-item>
+            <el-form-item label="LOGO:">
+                <el-col :span="8">
+                    <l-upload v-model="form.logo_url"></l-upload>
+                </el-col>
+            </el-form-item>
             <el-form-item label="价格:">
                 <el-col :span="8">
                     <el-input type="number" v-model="form.price"></el-input>
@@ -23,14 +28,19 @@
 <script>
     import LPageNav from "../components/LPageNav";
     import {getGoodsById, postGoods, putGoodsById} from "../utils/HttpUtils";
+    import LUpload from "../components/LUpload";
 
     export default {
-        components: {LPageNav},
+        components: {LUpload, LPageNav},
         data() {
             return {
                 isEdit: /Update$/g.test(this.$route.path),
                 id: this.$route.query.id,
-                form: {},
+                form: {
+                    name: "",
+                    logo_url: "",
+                    price: null,
+                },
             }
         },
         mounted() {
@@ -63,7 +73,7 @@
             },
             goBack() {
                 this.$router.go(-1);
-            }
+            },
         }
     }
 </script>
