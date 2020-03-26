@@ -132,3 +132,5 @@ export function postGoods(data) {
 export function getGoodsById(id) {
     return axiosInstance.get("/api/goods/" + id);
 }
+
+export default axiosInstance;

@@ -30,6 +30,7 @@
                 this.$store.dispatch("postLogin", {
                     ...this.form
                 }).then(res => {
+                    debugger
                     if (this.$route.query.redirect) {
                         // 防止$route.go(-1)回到登陆
                         this.$router.replace({

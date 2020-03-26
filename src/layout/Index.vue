@@ -6,19 +6,19 @@
                 background-color="#545c64"
                 text-color="#fff"
                 active-text-color="#ffd04b">
-                <el-menu-item index="0" @click="$router.push('/')">
+                <el-menu-item index="0" @click="$router.push('/?_='+new Date().getTime())">
                     <i class="el-icon-setting"></i>
                     <span slot="title">统计汇总</span>
                 </el-menu-item>
-                <el-menu-item index="1" @click="$router.push('/userList')">
+                <el-menu-item index="1" @click="$router.push('/userList?_='+new Date().getTime())">
                     <i class="el-icon-setting"></i>
                     <span slot="title">用户列表</span>
                 </el-menu-item>
-                <el-menu-item index="2" @click="$router.push('/goodsList')">
+                <el-menu-item index="2" @click="$router.push('/goodsList?_='+new Date().getTime())">
                     <i class="el-icon-setting"></i>
                     <span slot="title">商品列表</span>
                 </el-menu-item>
-                <el-menu-item index="3" @click="$router.push('/orderList')">
+                <el-menu-item index="3" @click="$router.push('/orderList?_='+new Date().getTime())">
                     <i class="el-icon-setting"></i>
                     <span slot="title">订单列表</span>
                 </el-menu-item>
@@ -27,15 +27,15 @@
                         <i class="el-icon-setting"></i>
                         <span>权限管理</span>
                     </template>
-                    <el-menu-item index="4-1" @click="$router.push('/permissionGroup/roleList')">
+                    <el-menu-item index="4-1" @click="$router.push('/permissionGroup/roleList?_='+new Date().getTime())">
                         <i class="el-icon-setting"></i>
                         <span slot="title">角色列表</span>
                     </el-menu-item>
-                    <el-menu-item index="4-2" @click="$router.push('/permissionGroup/permissionList')">
+                    <el-menu-item index="4-2" @click="$router.push('/permissionGroup/permissionList?_='+new Date().getTime())">
                         <i class="el-icon-setting"></i>
                         <span slot="title">权限列表</span>
                     </el-menu-item>
-                    <el-menu-item index="4-3" @click="$router.push('/permissionGroup/pageList')">
+                    <el-menu-item index="4-3" @click="$router.push('/permissionGroup/pageList?_='+new Date().getTime())">
                         <i class="el-icon-setting"></i>
                         <span slot="title">页面管理</span>
                     </el-menu-item>
@@ -54,7 +54,7 @@
                 </el-row>
             </el-header>
             <el-main>
-                <router-view></router-view>
+                <router-view :key="key"></router-view>
             </el-main>
         </el-container>
     </el-container>
@@ -68,11 +68,9 @@
         computed: {
             ...mapState({
                 user: state => state.user
-            })
-        },
-        mounted() {
-            if (this.user.phone == null) {
-                this.$router.push("/login");
+            }),
+            key() {
+                return this.$route.path + new Date().getTime();
             }
         },
         methods: {

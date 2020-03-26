@@ -147,13 +147,24 @@ let router = new Router({
 });
 
 router.beforeEach((to, from, next) => {
+    if (!$store.state.user.phone && to.path !== "/login") { // 未登录
+        next("/login");
+    } else { // 已登录
+        next();
+    }
     // if ($store.state.roles.length === 0) {
     //     router.addRoutes(asyncRoutesLocal);
     //     next();
     // } else {
-    next();
+    // next();
     // }
 });
+
+// 忽略重复路由跳转错误
+let push = Router.prototype.push;
+Router.prototype.push = function () {
+    return push.apply(this, arguments).catch(err => err);
+};
 
 export const baseRoutes = baseRoutesLocal;
 
