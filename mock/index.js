@@ -7,7 +7,14 @@ function before(app) {
                 phone: "01234567890"
             }
         });
-    })
+    });
+
+    app.get("/api/loginOut", function (req, res) {
+        res.json({
+            status: "1",
+            data: {}
+        });
+    });
 }
 
 module.exports = before;

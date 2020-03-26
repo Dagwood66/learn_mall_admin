@@ -27,15 +27,18 @@
                         <i class="el-icon-setting"></i>
                         <span>权限管理</span>
                     </template>
-                    <el-menu-item index="4-1" @click="$router.push('/permissionGroup/roleList?_='+new Date().getTime())">
+                    <el-menu-item index="4-1"
+                                  @click="$router.push('/permissionGroup/roleList?_='+new Date().getTime())">
                         <i class="el-icon-setting"></i>
                         <span slot="title">角色列表</span>
                     </el-menu-item>
-                    <el-menu-item index="4-2" @click="$router.push('/permissionGroup/permissionList?_='+new Date().getTime())">
+                    <el-menu-item index="4-2"
+                                  @click="$router.push('/permissionGroup/permissionList?_='+new Date().getTime())">
                         <i class="el-icon-setting"></i>
                         <span slot="title">权限列表</span>
                     </el-menu-item>
-                    <el-menu-item index="4-3" @click="$router.push('/permissionGroup/pageList?_='+new Date().getTime())">
+                    <el-menu-item index="4-3"
+                                  @click="$router.push('/permissionGroup/pageList?_='+new Date().getTime())">
                         <i class="el-icon-setting"></i>
                         <span slot="title">页面管理</span>
                     </el-menu-item>
@@ -76,7 +79,11 @@
         methods: {
             loginOut() {
                 getLoginOut().then(res => {
-                    this.$router.push("/login");
+                    // 清空缓存
+                    this.$store.commit("setUser", {});
+                    this.$store.commit("setRoles", []);
+                    // 刷新页面-(清空动态路由权限)
+                    window.history.go(0);
                 })
             }
         }
